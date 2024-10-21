@@ -1,0 +1,92 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ 'master' ]
+  pull_request:
+    branches: [ 'master' ]
+    types: [ 'opened', 'synchronize' ]
+
+concurrency:
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+      - uses: actions/cache@v4
+        with:
+          path: vendor
+          key: composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: composer-
+      - name: Install dependencies
+        run: |
+          npm ci
+          composer install --no-interaction --no-plugins --no-progress --no-ansi --no-scripts
+      - name: Run Biome checks
+        run: npx @biomejs/biome format
+      - name: Run Pint checks
+        run: ./vendor/bin/pint --test
+
+  build:
+    needs: [ 'lint' ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - name: Install NPM dependencies
+        run: npm ci
+      - name: Build React
+        run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: public/build
+
+  deploy-production:
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+    needs: [ 'build' ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: build
+          path: public/build
+      - name: Deploy laravel
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            set -e
+            cd FOLDER_HERE
+            git pull
+            php ~/composer.phar install --no-dev --no-interaction --optimize-autoloader --no-plugins --no-progress --no-ansi --no-scripts
+            php artisan migrate --force
+            php artisan optimize
+            php artisan event:cache
+      - name: Deploy React
+        uses: nogsantos/scp-deploy@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          user: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          src: ./public/build/*
+          remote: FOLDER_HERE

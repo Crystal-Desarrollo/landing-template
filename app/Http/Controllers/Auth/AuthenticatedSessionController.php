@@ -17,7 +17,7 @@ class AuthenticatedSessionController extends Controller
 {
     public function create(): Response
     {
-        return Inertia::render('Auth/Login', [
+        return Inertia::render('auth/login', [
             'canResetPassword' => Route::has('password.request'),
             'status' => session('status'),
         ]);
@@ -28,7 +28,7 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
         $request->session()->regenerate();
 
-        return redirect()->intended(route('admin.articles.index'));
+        return redirect()->intended(route('admin.dashboard'));
     }
 
     public function destroy(Request $request): RedirectResponse

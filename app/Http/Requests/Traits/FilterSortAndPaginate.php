@@ -2,13 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Traits;
 
-use App\DTO\FilterSortPaginateDto;
-use App\DTO\SortParametersDto;
-use Illuminate\Foundation\Http\FormRequest;
+use App\DateTransferObjects\FilterSortPaginateDto;
+use App\DateTransferObjects\SortParametersDto;
 
-class BaseRequest extends FormRequest
+class FilterSortAndPaginate
 {
     public function getFilterSortPaginateDto(): FilterSortPaginateDto
     {

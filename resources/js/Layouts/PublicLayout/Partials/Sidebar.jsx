@@ -1,4 +1,4 @@
-import { SidebarLink } from '@/Layouts/Partials/SidebarLink.jsx'
+import { SidebarLink } from '@/Layouts/partials/SidebarLink.jsx'
 import { IconHome, IconX } from '@tabler/icons-react'
 import clsx from 'clsx'
 

@@ -2,98 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeInUp {
-    0% {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes adjust-header-lihgt {
-    to {
-        background: #ffffff1a;
-        backdrop-filter: blur(5px);
-        height: 5rem;
-    }
-}
-
-@keyframes adjust-header-dark {
-    to {
-        background: #111827e6;
-        backdrop-filter: blur(5px);
-        height: 5rem;
-    }
-}
-
-body:not(:is(.dark)) #animate-header {
-    animation: adjust-header-lihgt linear both;
-    animation-timeline: scroll();
-    animation-range: 0 200px;
-}
-
-body:is(.dark) #animate-header {
-    animation: adjust-header-dark linear both;
-    animation-timeline: scroll();
-    animation-range: 0 200px;
-}
-
-
-.animate-fadeIn {
-    animation: fadeIn 1s ease-in-out forwards;
-}
-
-.animate-fadeInUp {
-    animation: fadeInUp 1s ease-in-out forwards;
-}
-
-.animate-fadeInUpDelay300 {
-    animation: fadeInUp 1s ease-in-out forwards 0.3s;
-}
-
-.animate-fadeInUpDelay600 {
-    animation: fadeInUp 1s ease-in-out forwards 0.6s;
-}
-
-.animate-fadeInUpDelay900 {
-    animation: fadeInUp 1s ease-in-out forwards 0.9s;
-}
-
-body>div {
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
-}
-
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
 }
 
-body:not(:is(.dark))::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background-color: #ffffff;
 }
 
-body:is(.dark)::-webkit-scrollbar-track {
-    background-color: #1f2937;
-}
-
 ::-webkit-scrollbar-thumb {
-    background-color: #F06114;
+    background-color: #F35651;
     border-radius: 4px;
 }
 
@@ -102,6 +21,12 @@ body:is(.dark)::-webkit-scrollbar-track {
 }
 
 ::-webkit-scrollbar-thumb:horizontal {
-    background-color: #F06114;
+    background-color: #F35651;
     border-radius: 4px;
 }
+
+/* @media (max-width: 768px) {
+    ::-webkit-scrollbar {
+        display: none;
+    }
+} */

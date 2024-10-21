@@ -1,14 +1,11 @@
-import { ProfileButton } from '@/Layouts/Partials/ProfileButton.jsx'
-import { Sidebar } from '@/Layouts/Partials/Sidebar.jsx'
-import { useDarkMode } from '@/Layouts/Partials/useDarkMode.jsx'
+import { ProfileButton } from '@/Layouts/AdminLayout/Partials/ProfileButton.jsx'
+import { Sidebar } from '@/Layouts/AdminLayout/Partials/Sidebar.jsx'
 import { Head } from '@inertiajs/react'
-import { IconMoon, IconSun } from '@tabler/icons-react'
-import { Button } from '@tremor/react'
+import { Title } from '@tremor/react'
 import clsx from 'clsx'
 import { useState } from 'react'
 
-export function AuthenticatedLayout({ children, title }) {
-  const { darkMode, setDarkMode } = useDarkMode()
+export function AdminLayout({ children, title }) {
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false)
 
   return (
@@ -23,13 +20,12 @@ export function AuthenticatedLayout({ children, title }) {
         <Sidebar mobileOpen={mobileSidebarOpen} setMobileOpen={setMobileSidebarOpen} />
         <header
           className={clsx(
-            'fixed end-0 start-0 top-0 z-30 flex h-16 flex-none items-center bg-white shadow-sm transition-all duration-300 ease-out dark:bg-gray-900 lg:ps-64',
-            [],
+            'fixed px-4 end-0 start-0 top-0 z-30 flex h-16 flex-none items-center bg-white shadow-sm transition-all duration-300 ease-out dark:bg-gray-900 lg:ps-64',
           )}
         >
-          <div className="mx-auto flex w-full justify-between px-4">
-            <div className="flex items-center">
-              <div className="me-2 lg:hidden">
+          <div className="mx-auto flex w-full lg:justify-between items-center">
+            <div className="flex items-center lg:hidden">
+              <div className="me-2 ">
                 <button
                   type="button"
                   className="inline-flex items-center justify-center gap-2 rounded border border-gray-300 bg-white px-3 py-2 font-semibold leading-6 text-gray-800 shadow-sm hover:border-gray-300 hover:bg-gray-100 hover:text-gray-800 hover:shadow focus:outline-none focus:ring focus:ring-gray-500/25 active:border-white active:bg-white active:shadow-none dark:border-gray-700/75 dark:bg-gray-900 dark:text-gray-200 dark:hover:border-gray-700 dark:hover:bg-gray-800 dark:hover:text-gray-200 dark:focus:ring-gray-700 dark:active:border-gray-900 dark:active:bg-gray-900"
@@ -51,32 +47,15 @@ export function AuthenticatedLayout({ children, title }) {
               </div>
             </div>
 
-            <div className="flex items-center gap-4">
-              <Button color="slate" variant="light" onClick={() => setDarkMode(!darkMode)}>
-                <span className="grid place-items-center">{darkMode ? <IconSun /> : <IconMoon />}</span>
-              </Button>
+            <Title className="ml-4 text-xl min-x-max text-nowrap hidden sm:block">{title}</Title>
+
+            <div className="flex items-center gap-4 ml-auto">
               <ProfileButton />
             </div>
           </div>
         </header>
-        <main id="page-content" className="flex flex-col pt-16">
-          <div className="p-10">
-            {/*
-                        <div className="flex flex-row items-center mb-5 gap-4">
-                        <Button
-                        color="dark:white"
-                        variant="light"
-                        onClick={() => history.back()}
-                        className="transition duration-200 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 p-1 rounded-full flex items-center justify-center"
-                        >
-                        <IconChevronLeft />
-                        </Button>
-                        <Title className="mt-1">{title}</Title>
-
-                        </div> */}
-
-            {children}
-          </div>
+        <main id="page-content" className="flex max-w-full flex-auto flex-col pt-16">
+          <div className="py-6 px-4">{children}</div>
         </main>
       </div>
     </div>

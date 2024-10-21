@@ -1,5 +1,6 @@
 import InputLabel from '@/Components/InputLabel'
-import { GuestLayout } from '@/Layouts/GuestLayout'
+import { PublicLayout } from '@/Layouts/PublicLayout/PublicLayout.jsx'
+import Logo from '@assets/logo.svg'
 import { Head, Link, useForm } from '@inertiajs/react'
 import { Button, Card, TextInput } from '@tremor/react'
 import { useEffect } from 'react'
@@ -24,55 +25,57 @@ export default function Login() {
   }
 
   return (
-    <GuestLayout>
+    <Card className="max-w-md">
       <Head title="Ingresar" />
 
-      <Card className="max-w-screen-sm">
-        <form onSubmit={submit}>
-          <div>
-            <InputLabel htmlFor="email" value="Email" />
+      <img src={Logo} alt="Logo" className="h-28 mx-auto mb-4" />
 
-            <TextInput
-              id="email"
-              type="email"
-              placeholder="Correo electrónico"
-              value={data.email}
-              autoComplete="username"
-              onChange={e => setData('email', e.target.value)}
-              error={errors.email}
-              errorMessage={errors.email}
-            />
-          </div>
+      <form onSubmit={submit}>
+        <div>
+          <InputLabel htmlFor="email" value="Email" />
 
-          <div className="mt-4">
-            <InputLabel htmlFor="password" value="Password" />
+          <TextInput
+            id="email"
+            type="email"
+            placeholder="Correo electrónico"
+            value={data.email}
+            autoComplete="username"
+            onChange={e => setData('email', e.target.value)}
+            error={errors.email}
+            errorMessage={errors.email}
+          />
+        </div>
 
-            <TextInput
-              id="password"
-              type="password"
-              placeholder="Contraseña"
-              value={data.password}
-              autoComplete="current-password"
-              onChange={e => setData('password', e.target.value)}
-              error={errors.password}
-              errorMessage={errors.password}
-            />
-          </div>
+        <div className="mt-4">
+          <InputLabel htmlFor="password" value="Password" />
 
-          <div className="flex items-center justify-end mt-4 gap-4">
-            <Link
-              href={route('password.request')}
-              className="underline text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-            >
-              ¿Olvidaste tu contraseña?
-            </Link>
+          <TextInput
+            id="password"
+            type="password"
+            placeholder="Contraseña"
+            value={data.password}
+            autoComplete="current-password"
+            onChange={e => setData('password', e.target.value)}
+            error={errors.password}
+            errorMessage={errors.password}
+          />
+        </div>
 
-            <Button disabled={processing} loading={processing}>
-              Ingresar
-            </Button>
-          </div>
-        </form>
-      </Card>
-    </GuestLayout>
+        <div className="flex flex-col items-center justify-end mt-4 gap-4">
+          <Button disabled={processing} loading={processing} className="w-full">
+            Ingresar
+          </Button>
+
+          <Link
+            href={route('password.request')}
+            className="underline text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
+            ¿Olvidaste tu contraseña?
+          </Link>
+        </div>
+      </form>
+    </Card>
   )
 }
+
+Login.layout = page => <PublicLayout>{page}</PublicLayout>
