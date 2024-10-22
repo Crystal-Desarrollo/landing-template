@@ -10,7 +10,7 @@ Route::get('/', function () {
     return Inertia::render('home/home');
 })->name('home');
 
-/* ---------- [ Auth protected routes ] ----------  */
+/* ---------- [ auth protected routes ] ----------  */
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     /* ---------- [ Profile ] ----------  */
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -18,7 +18,7 @@ export default function ForgotPassword({ status }) {
     <form onSubmit={handleSubmit} className="w-full max-w-md">
       <Head title="Recuperar contraseña" />
       {status && (
-        <Callout title="Email enviado" color="green" className="w-full">
+        <Callout title="Correo electrónico enviado" color="green" className="w-full mb-4">
           <p>{status}</p>
         </Callout>
       )}
