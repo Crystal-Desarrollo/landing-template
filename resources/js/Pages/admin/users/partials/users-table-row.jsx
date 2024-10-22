@@ -36,6 +36,7 @@ export default function UsersTableRow({ data }) {
       <TableRow>
         <TableCell>{data.name}</TableCell>
         <TableCell>{data.email}</TableCell>
+        <TableCell>{data.roles.map(role => role.display_name).join(', ')}</TableCell>
         <TableCell>{formatDate(data.created_at, 'dd/MM/yyyy')}</TableCell>
         <TableCell className="flex flex-row justify-end gap-4">
           <Button color="orange" variant="light" onClick={() => router.get(route('users.edit', { user: data.id }))}>

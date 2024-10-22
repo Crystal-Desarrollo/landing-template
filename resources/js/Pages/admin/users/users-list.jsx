@@ -8,6 +8,7 @@ import { Button, Card } from '@tremor/react'
 export const USERS_COLUMNS = [
   { id: 'name', label: 'Nombre' },
   { id: 'email', label: 'Email' },
+  { id: 'roles', label: 'Roles' },
   { id: 'created_at', label: 'Fecha de Creación' },
   { id: 'actions', label: '' },
 ]
