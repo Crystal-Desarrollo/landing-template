@@ -4,18 +4,21 @@
 <head>
     <meta charset="utf-8">
     <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1">
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    >
     <title inertia>{{ config('app.name', '') }}</title>
-
+    
     <meta
-        name="description"
-        content="16° Edición Del 11 al 20 de octubre de 2024 en la Ciudad Cultural. Organiza Cámara de Comercio Exterior de Jujuy.">
+      name="description"
+      content=""
+    >
     <meta
-        name="keywords"
-        content="Camara de comercio exterior, CAMCOMEX, ExpoJuy, Norte argentino, Jujuy, Turismo, industria, negocios, artesanos, emprendedurismo">
-    <meta name="author" content="Cámara de Comercio Exterior de Jujuy">
-
+      name="keywords"
+      content=""
+    >
+    <meta name="author" content="Crystal Desarrollo S.R.L">
+    
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('/apple-icon-57x57.png') }}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('/apple-icon-60x60.png') }}">
@@ -34,21 +37,23 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-
+    
     <!-- Sharing -->
-    <meta property="og:title" content="Expojuy - 16° Edición">
+    <meta property="og:title" content="">
     <meta
-        property="og:description"
-        content="Del 11 al 20 de octubre de 2024 en la Ciudad Cultural. Organiza Cámara de Comercio Exterior de Jujuy.">
+      property="og:description"
+      content=""
+    >
     <meta property="og:image" content="{{asset('logo.png')}}">
-    <meta property="og:url" content="https://expojuy.camcomexjujuy.com.ar">
+    <meta property="og:url" content="">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Expojuy - 16° Edición">
+    <meta name="twitter:title" content="">
     <meta
-        name="twitter:description"
-        content="Del 11 al 20 de octubre de 2024 en la Ciudad Cultural. Organiza Cámara de Comercio Exterior de Jujuy.">
+      name="twitter:description"
+      content=""
+    >
     <meta name="twitter:image" content="{{asset('logo.png')}}">
-
+    
     <!-- Scripts -->
     @routes
     @viteReactRefresh
@@ -57,18 +62,8 @@
 </head>
 
 <body class="font-sans antialiased min-h-dvh">
-    @inertia
+@inertia
 
-    <script>
-        const darkModeEnabled = localStorage.getItem('darkMode') === 'true';
-        const $body = document.querySelector('body');
-
-        if (darkModeEnabled) {
-            $body.classList.add('dark');
-        } else {
-            $body.classList.remove('dark');
-        }
-    </script>
 </body>
 
 </html>
