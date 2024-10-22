@@ -1,5 +1,5 @@
-import InputLabel from '@/Components/InputLabel.jsx'
-import { AdminLayout } from '@/Layouts/AdminLayout/AdminLayout.jsx'
+import InputLabel from '@/Components/input-label.jsx'
+import { AdminLayout } from '@/layouts/admin-layout/admin-layout.jsx'
 import { useForm } from '@inertiajs/react'
 import { Button, Card, Col, Grid, MultiSelect, MultiSelectItem, TextInput, Title } from '@tremor/react'
 import { toast } from 'sonner'

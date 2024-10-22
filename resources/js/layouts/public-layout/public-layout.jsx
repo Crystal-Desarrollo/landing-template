@@ -1,5 +1,5 @@
-import { CrystalFooter } from '@/Layouts/PublicLayout/Partials/crystal-footer.jsx'
-import { Header } from '@/Layouts/PublicLayout/Partials/header.jsx'
+import { CrystalFooter } from '@/Layouts/PublicLayout/partials/crystal-footer.jsx'
+import { Header } from '@/Layouts/PublicLayout/partials/header.jsx'
 import clsx from 'clsx'
 import { useState } from 'react'
 

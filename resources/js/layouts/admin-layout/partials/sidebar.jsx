@@ -1,4 +1,4 @@
-import { SidebarLink } from '@/Layouts/AdminLayout/Partials/SidebarLink.jsx'
+import { SidebarLink } from '@/layouts/admin-layout/partials/sidebar-link.jsx'
 import logo from '@assets/logo.svg'
 import { IconArrowBack, IconDashboard, IconUsersGroup } from '@tabler/icons-react'
 import clsx from 'clsx'

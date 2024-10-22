@@ -1,5 +1,5 @@
-import { ProfileButton } from '@/Layouts/AdminLayout/Partials/ProfileButton.jsx'
-import { Sidebar } from '@/Layouts/AdminLayout/Partials/Sidebar.jsx'
+import { ProfileButton } from '@/layouts/admin-layout/partials/profile-button.jsx'
+import { Sidebar } from '@/layouts/admin-layout/partials/sidebar.jsx'
 import { Head } from '@inertiajs/react'
 import { Title } from '@tremor/react'
 import clsx from 'clsx'

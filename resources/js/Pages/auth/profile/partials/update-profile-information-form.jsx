@@ -1,5 +1,5 @@
-import InputError from '@/Components/InputError.jsx'
-import InputLabel from '@/Components/InputLabel.jsx'
+import InputError from '@/Components/input-error.jsx'
+import InputLabel from '@/Components/input-label.jsx'
 import { useForm, usePage } from '@inertiajs/react'
 import { Button, Card, Col, DatePicker, Grid, Select, SelectItem, TextInput } from '@tremor/react'
 import { format, parse } from 'date-fns'

@@ -1,6 +1,6 @@
-import { Sheet } from '@/Components/Sheet/Sheet.jsx'
-import { TableHeader } from '@/Components/Table/TableHeader.jsx'
-import { TablePagination } from '@/Components/Table/TablePagination.jsx'
+import { Sheet } from '@/components/sheet.jsx'
+import { TableHeader } from '@/components/table/table-header.jsx'
+import { TablePagination } from '@/components/table/table-pagination.jsx'
 import { router, useForm } from '@inertiajs/react'
 import { IconFilter, IconSearch } from '@tabler/icons-react'
 import {

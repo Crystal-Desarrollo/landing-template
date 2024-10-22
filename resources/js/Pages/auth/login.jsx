@@ -1,5 +1,5 @@
-import InputLabel from '@/Components/InputLabel'
-import { PublicLayout } from '@/Layouts/PublicLayout/PublicLayout.jsx'
+import InputLabel from '@/Components/input-label.jsx'
+import { PublicLayout } from '@/Layouts/PublicLayout/public-layout.jsx'
 import Logo from '@assets/logo.svg'
 import { Head, Link, useForm } from '@inertiajs/react'
 import { Button, Card, TextInput } from '@tremor/react'

@@ -1,9 +1,11 @@
-import { TableContent } from '@/Components/Table/TableContent'
-import { AdminLayout } from '@/Layouts/AdminLayout/AdminLayout.jsx'
+import { DeleteUserAlert } from '@/Pages/admin/users/partials/delete-user-alert.jsx'
 import UsersTableRow from '@/Pages/admin/users/partials/users-table-row.jsx'
+import { TableContent } from '@/components/table/table-content.jsx'
+import { AdminLayout } from '@/layouts/admin-layout/admin-layout.jsx'
 import { Link } from '@inertiajs/react'
 import { IconPlus } from '@tabler/icons-react'
 import { Button, Card } from '@tremor/react'
+import { useState } from 'react'
 
 export const USERS_COLUMNS = [
   { id: 'name', label: 'Nombre' },
@@ -14,12 +16,27 @@ export const USERS_COLUMNS = [
 ]
 
 export default function UsersList({ users }) {
+  const [deleteAlert, setDeleteAlert] = useState({ open: false, userId: null })
+
+  const openDeleteAlert = userId =>
+    setDeleteAlert({
+      open: true,
+      userId,
+    })
+
+  const closeDeleteAlert = () =>
+    setDeleteAlert({
+      open: false,
+      userId: null,
+    })
+
   return (
     <Card>
+      <DeleteUserAlert open={deleteAlert.open} onClose={closeDeleteAlert} userId={deleteAlert.userId} />
       <TableContent
         columns={USERS_COLUMNS}
         paginator={users}
-        row={<UsersTableRow />}
+        row={<UsersTableRow onDelete={openDeleteAlert} />}
         resourceName="users"
         hasStatusFilter={false}
         renderAside={

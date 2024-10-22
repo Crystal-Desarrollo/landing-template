@@ -1,4 +1,4 @@
-import { PublicLayout } from '@/Layouts/PublicLayout/PublicLayout.jsx'
+import { PublicLayout } from '@/Layouts/PublicLayout/public-layout.jsx'
 import { Head } from '@inertiajs/react'
 import { useEffect, useState } from 'react'
 

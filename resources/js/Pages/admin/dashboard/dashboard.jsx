@@ -1,4 +1,4 @@
-import { AdminLayout } from '@/Layouts/AdminLayout/AdminLayout.jsx'
+import { AdminLayout } from '@/layouts/admin-layout/admin-layout.jsx'
 import { Link } from '@inertiajs/react'
 import { IconUsersGroup } from '@tabler/icons-react'
 import { Card, Grid, Subtitle, Title } from '@tremor/react'

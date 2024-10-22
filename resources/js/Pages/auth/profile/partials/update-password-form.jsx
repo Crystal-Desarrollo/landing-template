@@ -1,4 +1,4 @@
-import InputLabel from '@/Components/InputLabel.jsx'
+import InputLabel from '@/Components/input-label.jsx'
 import { useForm } from '@inertiajs/react'
 import { Button, Card, Col, Grid, TextInput } from '@tremor/react'
 import { useRef } from 'react'
