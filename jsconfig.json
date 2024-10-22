@@ -4,6 +4,7 @@
     "paths": {
       "@/*": ["resources/js/*"],
       "@assets/*": ["resources/assets/*"],
+      "@css/*": ["resources/css/*"],
       "ziggy-js": ["./vendor/tightenco/ziggy"]
     }
   },
