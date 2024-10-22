@@ -12,7 +12,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #F35651;
+    background-color: gray;
     border-radius: 4px;
 }
 
@@ -21,12 +21,6 @@
 }
 
 ::-webkit-scrollbar-thumb:horizontal {
-    background-color: #F35651;
+    background-color: gray;
     border-radius: 4px;
 }
-
-/* @media (max-width: 768px) {
-    ::-webkit-scrollbar {
-        display: none;
-    }
-} */
