@@ -1,6 +1,6 @@
 import { SidebarLink } from '@/Layouts/AdminLayout/Partials/SidebarLink.jsx'
 import logo from '@assets/logo.svg'
-import { IconDashboard } from '@tabler/icons-react'
+import { IconArrowBack, IconDashboard, IconUsersGroup } from '@tabler/icons-react'
 import clsx from 'clsx'
 
 export function Sidebar({ mobileOpen, setMobileOpen }) {
@@ -50,10 +50,18 @@ export function Sidebar({ mobileOpen, setMobileOpen }) {
               icon={<IconDashboard />}
               active={route().current('dashboard')}
             />
+            <SidebarLink
+              href={route('users.index')}
+              text="Usuarios"
+              icon={<IconUsersGroup />}
+              active={route().current().startsWith('users')}
+            />
           </nav>
         </div>
       </div>
-      <div className="flex flex-col mt-auto"></div>
+      <div className="flex flex-col mt-auto">
+        <SidebarLink href={route('home')} text="Volver al sitio" icon={<IconArrowBack />} />
+      </div>
     </nav>
   )
 }
