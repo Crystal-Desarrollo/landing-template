@@ -11,7 +11,7 @@ use App\Models\User;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 
-class UsersServices
+class UsersService
 {
     public function listUsers(FilterSortPaginateDto $dto): LengthAwarePaginator
     {

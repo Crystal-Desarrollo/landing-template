@@ -8,14 +8,14 @@ use App\Http\Requests\Users\ListUsersRequest;
 use App\Http\Requests\Users\StoreUserRequest;
 use App\Http\Requests\Users\UpdateUserRequest;
 use App\Models\User;
-use App\Services\UsersServices;
+use App\Services\UsersService;
 use Illuminate\Support\Facades\Redirect;
 use illuminate\Support\Str;
 use Inertia\Inertia;
 
 class UserController extends Controller
 {
-    public function __construct(private readonly UsersServices $usersServices) {}
+    public function __construct(private readonly UsersService $usersServices) {}
 
     public function index(ListUsersRequest $request)
     {
