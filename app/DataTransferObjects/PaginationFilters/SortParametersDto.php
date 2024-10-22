@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace App\DateTransferObjects;
+namespace App\DataTransferObjects\PaginationFilters;
 
 use InvalidArgumentException;
 
 readonly class SortParametersDto
 {
-    public const DIRECTION_ASC = 'asc';
+    public const string DIRECTION_ASC = 'asc';
 
-    public const DIRECTION_DESC = 'desc';
+    public const string DIRECTION_DESC = 'desc';
 
     /**
      * @throws InvalidArgumentException

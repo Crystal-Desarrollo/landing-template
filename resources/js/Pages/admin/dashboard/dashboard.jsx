@@ -3,14 +3,14 @@ import { Link } from '@inertiajs/react'
 import { IconUsersGroup } from '@tabler/icons-react'
 import { Card, Grid, Subtitle, Title } from '@tremor/react'
 
-export default function Dashboard({ auth: { user } }) {
+export default function Dashboard() {
   return (
     <>
       <Title>Bienvenido al panel de administración</Title>
-      <Subtitle>Acá podrás gestionar todo lo relaciado con tu página web</Subtitle>
+      <Subtitle>Acá podrás gestionar todo lo relacioado con tu página web</Subtitle>
 
       <Grid numItemsSm={2} numItemsMd={3} className="gap-4 mt-4">
-        <Link>
+        <Link href={route('users.index')}>
           <Card>
             <Title className="flex items-center gap-2 mb-2">
               <IconUsersGroup /> Usuarios
@@ -23,4 +23,4 @@ export default function Dashboard({ auth: { user } }) {
   )
 }
 
-Dashboard.layout = page => <AdminLayout header="Dashboard" children={page} />
+Dashboard.layout = page => <AdminLayout title="Dashboard" children={page} />

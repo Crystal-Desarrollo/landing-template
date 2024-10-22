@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Http\Requests\Traits;
 
-use App\DateTransferObjects\FilterSortPaginateDto;
-use App\DateTransferObjects\SortParametersDto;
+use App\DataTransferObjects\PaginationFilters\FilterSortPaginateDto;
+use App\DataTransferObjects\PaginationFilters\SortParametersDto;
 
-class FilterSortAndPaginate
+trait FilterSortAndPaginate
 {
     public function getFilterSortPaginateDto(): FilterSortPaginateDto
     {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\DateTransferObjects;
+namespace App\DataTransferObjects\PaginationFilters;
 
 readonly class FilterSortPaginateDto
 {

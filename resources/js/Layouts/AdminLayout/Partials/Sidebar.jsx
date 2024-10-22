@@ -45,10 +45,10 @@ export function Sidebar({ mobileOpen, setMobileOpen }) {
           <nav className="space-y-1">
             <div className="px-5 pb-2 text-xs font-medium uppercase tracking-wider text-gray-400">Menú</div>
             <SidebarLink
-              href={route('admin.dashboard')}
+              href={route('dashboard')}
               text="Dashboard"
               icon={<IconDashboard />}
-              active={route().current('admin.dashboard')}
+              active={route().current('dashboard')}
             />
           </nav>
         </div>

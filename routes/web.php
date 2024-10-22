@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::inertia('/', 'home/home')->name('home');
@@ -17,7 +18,10 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     /* ---------- [ Dashboard ] ----------  */
-    Route::inertia('/', 'admin/dashboard/dashboard')->name('admin.dashboard');
+    Route::inertia('/', 'admin/dashboard/dashboard')->name('dashboard');
+
+    /* ---------- [ UsersList ] ----------  */
+    Route::resource('users', UserController::class)->except(['show']);
 });
 
 require __DIR__ . '/auth.php';

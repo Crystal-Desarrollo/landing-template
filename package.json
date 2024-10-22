@@ -32,10 +32,15 @@
     "@tremor/react": "^3.17.4",
     "husky": "^9.1.4",
     "lint-staged": "^15.2.9",
+    "prop-types": "^15.8.1",
     "sonner": "^1.5.0"
   },
   "lint-staged": {
-    "resources/**/*.js, resources/**/*.jsx": ["npx @biomejs/biome check --write --staged"],
-    "*.php": ["./vendor/bin/pint . --dirty"]
+    "resources/**/*.js, resources/**/*.jsx": [
+      "npx @biomejs/biome check --write --staged"
+    ],
+    "*.php": [
+      "./vendor/bin/pint . --dirty"
+    ]
   }
 }
