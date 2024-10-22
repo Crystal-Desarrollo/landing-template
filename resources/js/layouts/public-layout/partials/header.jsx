@@ -1,4 +1,4 @@
-import { Sidebar } from '@/Layouts/PublicLayout/partials/sidebar.jsx'
+import { Sidebar } from '@/layouts/public-layout/partials/sidebar.jsx'
 import logo from '@assets/logo.svg'
 import { Link } from '@inertiajs/react'
 import { IconBrandFacebook, IconBrandInstagram, IconBrandTiktok, IconMenu2 } from '@tabler/icons-react'

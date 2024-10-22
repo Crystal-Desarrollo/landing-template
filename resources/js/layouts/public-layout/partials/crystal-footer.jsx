@@ -2,17 +2,15 @@ import logo from '@assets/crystal-logo.png'
 
 export const CrystalFooter = () => {
   return (
-    <section className="px-4 py-[24px] text-white flex flex-col items-center gap-8 bg-black w-full mt-auto">
-      <div className="max-w-screen-xl w-full mx-auto flex flex-col-reverse md:flex-row justify-between border-t border-white/20 py-8">
+    <section className="px-4 py-[24px] text-white flex flex-col items-center gap-8 bg-black w-full">
+      <div className="container w-full mx-auto flex flex-col-reverse md:flex-row justify-between px-4">
         <div className="flex flex-col gap-2 items-center md:items-start">
-          <p className="text-xl">
-            <img src={logo} alt="Logo de CrystalFooter Desarrollo" className="h-[32px] inline-block" />
-            Crystal Desarrollo
-          </p>
-          <p className="text-sm ml-3 text-font-light">Innovando desde Jujuy, Argentina &#x1f1e6;&#x1f1f7; &#x2764;</p>
-          <p className="text-sm text-font-light ml-3">Copyright &copy; {new Date().getFullYear()}</p>
+          <a target="_blank" href="https://crystal-desarrollo.com" className="text-md">
+            Sitio web creado por Crystal Desarrollo S.R.L
+            <img src={logo} alt="Logo de CrystalFooter Desarrollo" className="h-8 inline-block" />
+          </a>
         </div>
-        <div className="flex justify-center space-x-6 md:order-2 mb-8">
+        <div className="flex justify-center space-x-6 md:order-2">
           <a
             href="https://twitter.com/CrystalDevelop_"
             target="_blank"

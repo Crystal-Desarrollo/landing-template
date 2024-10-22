@@ -1,4 +1,4 @@
-import { PublicLayout } from '@/Layouts/PublicLayout/public-layout.jsx'
+import { PublicLayout } from '@/layouts/public-layout/public-layout.jsx'
 import Logo from '@assets/logo.svg'
 import { Head, Link, useForm } from '@inertiajs/react'
 import { Button, Callout, Card, Subtitle, TextInput } from '@tremor/react'
